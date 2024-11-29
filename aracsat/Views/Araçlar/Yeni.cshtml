@@ -1,0 +1,19 @@
+@model Araç
+
+<h1>Yeni Araç Ekle</h1>
+
+<form method="post" asp-action="Yeni">
+    <div>
+        <label>Marka</label>
+        <input type="text" asp-for="Marka" />
+    </div>
+    <div>
+        <label>Model</label>
+        <input type="text" asp-for="Model" />
+    </div>
+    <div>
+        <label>Fiyat</label>
+        <input type="number" asp-for="Fiyat" />
+    </div>
+    <button type="submit">Kaydet</button>
+</form>

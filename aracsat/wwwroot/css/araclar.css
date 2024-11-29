@@ -1,0 +1,53 @@
+/* araclar.css */
+
+/* Genel Sayfa Stil */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Header */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 50px 0;
+}
+
+/* Araç Kartları */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    border-radius: 10px;
+    object-fit: cover;
+    height: 200px;
+}
+
+/* Card Hover Efekti */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 150px;
+    }
+
+    header {
+        padding: 30px 0;
+    }
+}

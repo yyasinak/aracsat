@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Araçlar - ARAÇSAT</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Özel CSS -->
+    <link rel="stylesheet" href="araclar.css">
+    <script src="araclar.js"></script>
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-warning" href="#">🚗 ARAÇSAT</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hakkimizda.html">Hakkımızda</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Araçlar Başlık -->
+    <header class="text-center py-5">
+        <h1>Satılık Araçlar</h1>
+        <p class="lead">Farklı kategorilerdeki araçlarımızı inceleyin.</p>
+    </header>
+
+    <!-- Araç Filtreleme Formu -->
+    <section class="container py-5">
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <label for="marka" class="form-label">Marka</label>
+                <select class="form-select" id="marka">
+                    <option value="">Tüm Markalar</option>
+                    <option value="Acura">Acura</option>
+                    <option value="Alfa Romeo">Alfa Romeo</option>
+                    <option value="Aston Martin">Aston Martin</option>
+                    <option value="Audi">Audi</option>
+                    <option value="Bentley">Bentley</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Bugatti">Bugatti</option>
+                    <option value="Buick">Buick</option>
+                    <option value="Cadillac">Cadillac</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Chrysler">Chrysler</option>
+                    <option value="Citroën">Citroën</option>
+                    <option value="Dacia">Dacia</option>
+                    <option value="Daewoo">Daewoo</option>
+                    <option value="Daihatsu">Daihatsu</option>
+                    <option value="Dodge">Dodge</option>
+                    <option value="Ferrari">Ferrari</option>
+                    <option value="Fiat">Fiat</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Genesis">Genesis</option>
+                    <option value="GMC">GMC</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Infiniti">Infiniti</option>
+                    <option value="Jaguar">Jaguar</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Kia">Kia</option>
+                    <option value="Lamborghini">Lamborghini</option>
+                    <option value="Lancia">Lancia</option>
+                    <option value="Land Rover">Land Rover</option>
+                    <option value="Lexus">Lexus</option>
+                    <option value="Lincoln">Lincoln</option>
+                    <option value="Lotus">Lotus</option>
+                    <option value="Maserati">Maserati</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="McLaren">McLaren</option>
+                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                    <option value="Mini">Mini</option>
+                    <option value="Mitsubishi">Mitsubishi</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Opel">Opel</option>
+                    <option value="Peugeot">Peugeot</option>
+                    <option value="Porsche">Porsche</option>
+                    <option value="Ram">Ram</option>
+                    <option value="Renault">Renault</option>
+                    <option value="Rolls-Royce">Rolls-Royce</option>
+                    <option value="Saab">Saab</option>
+                    <option value="Seat">Seat</option>
+                    <option value="Škoda">Škoda</option>
+                    <option value="Smart">Smart</option>
+                    <option value="Subaru">Subaru</option>
+                    <option value="Suzuki">Suzuki</option>
+                    <option value="Tesla">Tesla</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Volvo">Volvo</option>
+                </select>               
+            </div>
+            <div class="col-md-3">
+                <label for="model" class="form-label">Model</label>
+                <input type="text" class="form-control" id="model" placeholder="Model girin">
+            </div>
+            <div class="col-md-3">
+                <label for="yil" class="form-label">Yıl</label>
+                <input type="number" class="form-control" id="yil" placeholder="Araç yılını girin" min="1886" max="2024">
+            </div>            
+            <div class="col-md-3">
+                <label for="fiyat" class="form-label">Fiyat Aralığı</label>
+                <input type="number" class="form-control" id="minFiyat" placeholder="Min. Fiyat">
+                <input type="number" class="form-control mt-2" id="maxFiyat" placeholder="Max. Fiyat">
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-primary mt-4" onclick="filtrele()">Filtrele</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Araçlar Listesi -->
+    <section class="container py-5">
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Marka</th>
+                        <th>Model</th>
+                        <th>Yıl</th>
+                        <th>Fiyat</th>
+                        <th>Açıklama</th>
+                        <th>Fotoğraf</th>
+                    </tr>
+                </thead>
+                <tbody id="araclarContainer">
+                </tbody>
+            </table>
+        </div>
+    </section>    
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-3 text-center">
+        <p>© 2024 Araç Satış Sitesi. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Özel JS -->
+    <script src="araclar.js"></script>
+</body>
+<script>
+    const araclar = [
+    { id: 1, marka: "Toyota", model: "Corolla", yil: 2022, fiyat: "450,000 ₺", aciklama: "Az kullanılmış, temiz.", foto: "toyota-corolla.jpg" },
+    { id: 2, marka: "BMW", model: "3 Series", yil: 2021, fiyat: "950,000 ₺", aciklama: "Hasarsız, tek el.", foto: "bmw-3series.jpg" },
+    { id: 3, marka: "Audi", model: "A4", yil: 2020, fiyat: "800,000 ₺", aciklama: "Full paket, garantili.", foto: "audi-a4.jpg" },
+    { id: 4, marka: "Mercedes-Benz", model: "C-Class", yil: 2023, fiyat: "1,200,000 ₺", aciklama: "Sıfır, premium.", foto: "mercedes-c-class.jpg" },
+    { id: 5, marka: "Honda", model: "Civic", yil: 2019, fiyat: "600,000 ₺", aciklama: "Düşük km, bakımlı.", foto: "honda-civic.jpg" },
+    { id: 6, marka: "Ford", model: "Focus", yil: 2021, fiyat: "550,000 ₺", aciklama: "İkinci el, temiz.", foto: "ford-focus.jpg" },
+    { id: 7, marka: "Nissan", model: "Qashqai", yil: 2020, fiyat: "700,000 ₺", aciklama: "SUV, bakımlı.", foto: "nissan-qashqai.jpg" },
+    { id: 8, marka: "Volkswagen", model: "Golf", yil: 2022, fiyat: "650,000 ₺", aciklama: "Sıfır araç.", foto: "volkswagen-golf.jpg" },
+    { id: 9, marka: "Hyundai", model: "Elantra", yil: 2019, fiyat: "450,000 ₺", aciklama: "Temiz araç.", foto: "hyundai-elantra.jpg" },
+    { id: 10, marka: "Kia", model: "Sportage", yil: 2023, fiyat: "1,000,000 ₺", aciklama: "SUV, full paket.", foto: "kia-sportage.jpg" },
+    { id: 11, marka: "Peugeot", model: "208", yil: 2021, fiyat: "400,000 ₺", aciklama: "Şehir aracı, ekonomik.", foto: "peugeot-208.jpg" },
+    { id: 12, marka: "Renault", model: "Clio", yil: 2022, fiyat: "380,000 ₺", aciklama: "Düşük yakıt tüketimi.", foto: "renault-clio.jpg" },
+    { id: 13, marka: "Volvo", model: "XC60", yil: 2023, fiyat: "1,500,000 ₺", aciklama: "Premium SUV.", foto: "volvo-xc60.jpg" },
+    { id: 14, marka: "Mazda", model: "CX-5", yil: 2020, fiyat: "850,000 ₺", aciklama: "Yüksek performans.", foto: "mazda-cx5.jpg" },
+    { id: 15, marka: "Chevrolet", model: "Camaro", yil: 2018, fiyat: "1,400,000 ₺", aciklama: "Spor araç, yüksek güç.", foto: "chevrolet-camaro.jpg" },
+    { id: 16, marka: "Tesla", model: "Model 3", yil: 2023, fiyat: "2,000,000 ₺", aciklama: "Elektrikli, sıfır.", foto: "tesla-model3.jpg" },
+    { id: 17, marka: "Porsche", model: "911", yil: 2021, fiyat: "3,000,000 ₺", aciklama: "Lüks spor araba.", foto: "porsche-911.jpg" },
+    { id: 18, marka: "Jaguar", model: "F-Pace", yil: 2022, fiyat: "1,800,000 ₺", aciklama: "SUV, zarif tasarım.", foto: "jaguar-fpace.jpg" },
+    { id: 19, marka: "Subaru", model: "Outback", yil: 2019, fiyat: "750,000 ₺", aciklama: "Dayanıklı, AWD.", foto: "subaru-outback.jpg" },
+    { id: 20, marka: "Lexus", model: "RX", yil: 2022, fiyat: "2,200,000 ₺", aciklama: "Lüks hibrit SUV.", foto: "lexus-rx.jpg" }
+];
+
+    const araclarContainer = document.getElementById("araclarContainer");
+
+    araclar.forEach(arac => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${arac.id}</td>
+            <td>${arac.marka}</td>
+            <td>${arac.model}</td>
+            <td>${arac.yil}</td>
+            <td>${arac.fiyat}</td>
+            <td>${arac.aciklama}</td>
+            <td><img src="${arac.foto}" alt="${arac.marka} ${arac.model}" style="width: 100px;"></td>
+        `;
+        araclarContainer.appendChild(row);
+    });
+</script>
+</html>

@@ -1,0 +1,25 @@
+@model IEnumerable<Araç>
+
+<h1>Araç Listesi</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Marka</th>
+            <th>Model</th>
+            <th>Fiyat</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var araç in Model)
+        {
+            <tr>
+                <td>@araç.Marka</td>
+                <td>@araç.Model</td>
+                <td>@araç.Fiyat</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Araçlar/Yeni">Yeni Araç Ekle</a>

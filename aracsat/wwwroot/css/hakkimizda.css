@@ -1,0 +1,48 @@
+/* Genel Stil */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header Stili */
+header {
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: white;
+    padding: 50px 0;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.row img {
+    max-width: 90%; 
+}
+
+
+/* İkonlar ve Bölüm Başlıkları */
+i {
+    color: #0056b3;
+    margin-bottom: 15px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Görseller */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: #bbb;
+}
+
+footer p {
+    margin: 0;
+}

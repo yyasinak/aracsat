@@ -1,0 +1,164 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background: linear-gradient(to right, #004f99, #0066cc); 
+}
+
+.nav-link {
+    color: #fff !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+    }
+    
+  
+    .navbar-brand {
+        font-size: 1.5rem;
+        color: #fff;
+    }
+    
+    .nav-link {
+        font-size: 1rem;
+    }
+    
+   
+    .hero-section {
+        background: url('images/hero-bg.jpg') no-repeat center center/cover;
+        height: 60vh;
+    }
+    
+    .hero-section h1 {
+        font-size: 3rem;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+    
+    .hero-section .btn {
+        margin-top: 20px;
+    }
+    
+    /* Araç Listesi */
+    #vehicles {
+        padding: 3rem 0;
+    }
+    
+    #vehicle-list .card {
+        margin-bottom: 1.5rem;
+    }
+    
+    #vehicle-list img {
+        max-height: 200px;
+        object-fit: cover;
+    }
+    
+    /* Footer */
+    footer {
+        background-color: #0056b3;
+    }
+    
+    font-size: 1.5rem;
+}
+
+/* Hero Bölümü */
+.hero-section {
+    background: url('images/hero-bg.jpg') no-repeat center center / cover;
+    padding: 100px 0;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Araç Listesi */
+#vehicles {
+    background-color: #f1f1f1;
+}
+
+#vehicles h2 {
+    color: #333;
+}
+
+/* Filtreler */
+.form-control,
+.form-select {
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+
+footer {
+    background: linear-gradient(to right, #004f99, #0066cc);
+}
+
+footer p {
+    margin: 0;
+}
+
+
+.btn-light {
+    background-color: #ff9900;
+    border-color: #ff9900;
+}
+
+.btn-light:hover {
+    background-color: #ff7700;
+    border-color: #ff7700;
+}
+
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+}
+.navbar {
+    font-size: 1.1rem;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 80vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Araç Kartları */
+.card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* İletişim Formu */
+form input, form textarea {
+    border-radius: 0;
+}
